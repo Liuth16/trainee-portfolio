@@ -57,3 +57,39 @@ h6 {
 }
 
 /* END OF RESET */
+
+/* GENERAL STYLES */
+section {
+  /* background-color: #0d0d0d; */
+}
+
+/* HEADER AND NAV */
+
+header {
+  background-color: #000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #00ff00;
+}
+
+/* HERO SECTION  */
+
+#hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
