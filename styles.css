@@ -59,14 +59,24 @@ h6 {
 /* END OF RESET */
 
 /* GENERAL STYLES */
+body {
+  font-family: "Orbitron", sans-serif;
+  color: #fff;
+  background-color: #000;
+}
+
 section {
-  /* background-color: #0d0d0d; */
+  background-color: #0d0d0d;
+  padding: 4rem 2rem;
 }
 
 /* HEADER AND NAV */
 
 header {
   background-color: #000;
+  position: sticky;
+  padding: 1rem;
+  top: 0;
 }
 
 nav ul {
@@ -92,4 +102,35 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* ABOUT SECTION */
+#about {
+  max-width: 70%;
+  margin: 1rem auto;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* PROJECTS SECTION */
+#projects {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.project {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* FOOTER SECTION  */
+
+footer {
+  background-color: #0d0d0d;
+  margin-top: 2rem;
+  padding: 1rem;
+  text-align: center;
 }
