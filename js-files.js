@@ -53,3 +53,21 @@ function setupCarousel(root) {
 
   updateHeight();
 }
+
+// read more button
+const readMoreBtns = document.querySelectorAll(".read-more-btn");
+
+readMoreBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const description = btn.previousElementSibling;
+    const moreText = description.querySelector(".more-text");
+
+    if (moreText.style.display === "none" || moreText.style.display === "") {
+      moreText.style.display = "inline";
+      btn.textContent = "Read Less";
+    } else {
+      moreText.style.display = "none";
+      btn.textContent = "Read More";
+    }
+  });
+});

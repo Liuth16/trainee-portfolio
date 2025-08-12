@@ -219,7 +219,30 @@ nav a:hover {
 .project h3,
 .project-description {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+}
+
+.project-description {
+  flex-direction: column;
+}
+
+.more-text {
+  display: none;
+}
+
+.read-more-btn {
+  background-color: #00ff00;
+  color: #000000;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.read-more-btn:hover {
+  background-color: #00cc00;
+  transform: translateY(-2px);
 }
 
 /* CAROUSEL */
