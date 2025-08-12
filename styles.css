@@ -70,6 +70,13 @@ section {
   padding: 4rem 2rem;
 }
 
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #00ff00;
+}
+
 /* HEADER AND NAV */
 
 header {
@@ -208,7 +215,7 @@ nav a:hover {
   right: 8px;
 }
 
-@media (max-width: 800px) {
+/* @media (max-width: 800px) {
   .project {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -218,39 +225,74 @@ nav a:hover {
     grid-column: auto;
     grid-row: auto;
   }
-}
+} */
 
 /* CONTACT SECTION */
 
 #contact {
-  max-width: 70%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 2rem;
 }
 
 .contact-card {
   background-color: #111;
   padding: 2rem;
   border-radius: 8px;
+  border: 1px solid rgba(0, 255, 0, 0.15);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.05);
 }
 
-.contact-form .input-group {
+.input-group {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: #0d0d0d;
+  border: 1px solid #333333;
+  border-radius: 6px;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00ff00;
+  box-shadow: 0 0 0 3px rgba(0, 255, 0, 0.15);
 }
 
 .submit-btn {
   background-color: #00ff00;
+  color: #000;
   padding: 0.8rem 1.4rem;
+  cursor: pointer;
+  border: none;
   border-radius: 6px;
+  margin-top: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #00cc00;
+  transform: translateY(-2px);
 }
 
 .form-note {
   color: #aaa;
+  margin-top: 0.75rem;
 }
 
 .mail-link {
@@ -260,6 +302,24 @@ nav a:hover {
 
 .social-link {
   color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #111111;
+  padding: 1.25rem 1.5rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 255, 0, 0.15);
+  text-decoration: none;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 255, 0, 0.5);
+}
+.contact-socials i {
+  font-size: 2rem;
+  color: #00ff00;
 }
 
 /* FOOTER SECTION  */
