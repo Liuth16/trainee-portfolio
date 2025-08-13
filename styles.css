@@ -216,10 +216,16 @@ nav a:hover {
   align-items: stretch;
 }
 
-.project h3,
-.project-description {
+.project-title {
   display: flex;
-  /* align-items: center; */
+  align-items: center;
+  gap: 2rem;
+}
+
+.project-title i {
+  /* margin: auto 0; */
+  font-size: 2rem;
+  color: #00ff00;
 }
 
 .project-description {
