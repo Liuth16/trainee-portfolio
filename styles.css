@@ -122,6 +122,7 @@ nav a:hover {
 
 .hero-content p {
   font-size: 1.5rem;
+  color: #00cc00;
 }
 
 .name {
@@ -132,6 +133,34 @@ nav a:hover {
 .name:hover {
   text-shadow: 0 0 20px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.5),
     0 0 30px rgba(0, 255, 0, 0.3);
+}
+
+/* TYPING ANIMATION */
+.wipe-effect {
+  width: max-content;
+  animation: wipe 4s linear, blink 0.75s step-end infinite;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+}
+
+@keyframes wipe {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #00cc00;
+  }
 }
 
 /* ABOUT SECTION */
