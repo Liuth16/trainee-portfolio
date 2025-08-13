@@ -135,34 +135,6 @@ nav a:hover {
     0 0 30px rgba(0, 255, 0, 0.3);
 }
 
-/* TYPING ANIMATION */
-.wipe-effect {
-  width: max-content;
-  animation: wipe 4s linear, blink 0.75s step-end infinite;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid;
-}
-
-@keyframes wipe {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #00cc00;
-  }
-}
-
 /* ABOUT SECTION */
 #about {
   max-width: 900px;
@@ -274,7 +246,6 @@ nav a:hover {
 }
 
 .project-title i {
-  /* margin: auto 0; */
   font-size: 2rem;
   color: #00ff00;
 }
@@ -364,18 +335,6 @@ nav a:hover {
 .carousel-control.next {
   right: 8px;
 }
-
-/* @media (max-width: 800px) {
-  .project {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 1rem;
-  }
-  .project .carousel {
-    grid-column: auto;
-    grid-row: auto;
-  }
-} */
 
 /* CONTACT SECTION */
 
