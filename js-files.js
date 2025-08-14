@@ -17,21 +17,6 @@ function setupCarousel(root) {
     items[0].classList.add("active");
   }
 
-  const updateHeight = () => {
-    const active = items[index];
-    if (!active) return;
-    const img = active.querySelector("img");
-    if (!img) return;
-
-    if (img.naturalWidth && img.naturalHeight) {
-      const displayedHeight =
-        (root.clientWidth / img.naturalWidth) * img.naturalHeight;
-      root.style.height = `${Math.round(displayedHeight)}px`;
-    } else {
-      img.addEventListener("load", updateHeight, { once: true });
-    }
-  };
-
   const show = (i) => {
     if (!items.length) return;
     const newIndex = (i + items.length) % items.length;
@@ -39,7 +24,6 @@ function setupCarousel(root) {
     items[index]?.classList.remove("active");
     items[newIndex].classList.add("active");
     index = newIndex;
-    updateHeight();
   };
 
   prevBtn?.addEventListener("click", () => {
@@ -52,14 +36,6 @@ function setupCarousel(root) {
     show(index + 1);
   });
 
-  window.addEventListener("resize", updateHeight);
-  items.forEach((item) => {
-    const img = item.querySelector("img");
-    if (img && !img.complete)
-      img.addEventListener("load", updateHeight, { once: true });
-  });
-
-  updateHeight();
   autoCycleInterval = setInterval(() => {
     show(index + 1);
   }, 10000);
