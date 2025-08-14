@@ -7,6 +7,7 @@ function setupCarousel(root) {
   const items = root.querySelectorAll(".carousel-item");
   const prevBtn = root.querySelector(".carousel-control.prev");
   const nextBtn = root.querySelector(".carousel-control.next");
+  let autoCycleInterval;
 
   let index = Array.from(items).findIndex((i) =>
     i.classList.contains("active")
@@ -41,8 +42,15 @@ function setupCarousel(root) {
     updateHeight();
   };
 
-  prevBtn?.addEventListener("click", () => show(index - 1));
-  nextBtn?.addEventListener("click", () => show(index + 1));
+  prevBtn?.addEventListener("click", () => {
+    clearInterval(autoCycleInterval);
+    show(index - 1);
+  });
+
+  nextBtn?.addEventListener("click", () => {
+    clearInterval(autoCycleInterval);
+    show(index + 1);
+  });
 
   window.addEventListener("resize", updateHeight);
   items.forEach((item) => {
@@ -52,6 +60,9 @@ function setupCarousel(root) {
   });
 
   updateHeight();
+  autoCycleInterval = setInterval(() => {
+    show(index + 1);
+  }, 10000);
 }
 
 // read more button
