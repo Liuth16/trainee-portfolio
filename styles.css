@@ -87,6 +87,13 @@ header {
   z-index: 1000;
 }
 
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -103,6 +110,31 @@ nav a {
 
 nav a:hover {
   color: #00ff00;
+}
+
+.flags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.flag-us,
+.flag-br {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flag-br img,
+.flag-us img {
+  min-width: 24px;
+  min-height: 24px;
 }
 
 /* HERO SECTION  */
@@ -226,6 +258,7 @@ nav a:hover {
   max-width: 1200px;
   margin: 0 auto;
   margin-bottom: 1rem;
+  border-radius: 8px;
 }
 
 .project {
@@ -347,6 +380,7 @@ nav a:hover {
 #contact {
   max-width: 1200px;
   margin: 0 auto;
+  border-radius: 8px;
 }
 
 .contact-grid {
@@ -580,12 +614,5 @@ footer {
   }
   to {
     background-position: -900px 700px, 800px -600px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #hero::before,
-  #hero::after {
-    animation: none;
   }
 }
