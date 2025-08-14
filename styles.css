@@ -439,3 +439,152 @@ footer {
   padding: 1rem;
   text-align: center;
 }
+
+/* RESPONSIVE STYLES */
+@media (max-width: 1024px) {
+  .project {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 2rem;
+    min-width: 280px;
+    overflow: hidden;
+  }
+  .project .carousel {
+    grid-column: auto;
+    grid-row: auto;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .project-title,
+  .project-description {
+    margin: 0 auto;
+    display: flex;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+  nav ul {
+    gap: 1.5rem;
+  }
+  section {
+    padding: 3rem 1rem;
+  }
+  .project-title {
+    gap: 1rem;
+  }
+  .project-title h3 {
+    font-size: 1.5rem;
+  }
+  .project-title i {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  nav ul {
+    gap: 1rem;
+  }
+  nav a {
+    font-size: 0.9rem;
+  }
+  .bio {
+    font-size: 1rem;
+  }
+  .tech-icons i {
+    font-size: 3rem;
+  }
+  .contact-card {
+    padding: 1.5rem;
+  }
+}
+
+/* ANIMACAO HERO SECTION  */
+#hero {
+  position: relative;
+  overflow: hidden;
+}
+
+#hero::before,
+#hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+#hero::before {
+  opacity: 0.6;
+  background-image: radial-gradient(
+      rgba(255, 255, 255, 0.45) 1px,
+      transparent 1px
+    ),
+    radial-gradient(rgba(0, 255, 0, 0.25) 1px, transparent 1px),
+    radial-gradient(rgba(255, 255, 255, 0.25) 2px, transparent 2px);
+  background-size: 140px 140px, 220px 220px, 320px 320px;
+  background-position: 0 0, 50px 80px, 100px 20px;
+  animation: dust-shift-a 120s linear infinite;
+}
+
+#hero::after {
+  opacity: 0.25;
+  background-image: radial-gradient(
+      rgba(255, 255, 255, 0.25) 1px,
+      transparent 1px
+    ),
+    radial-gradient(rgba(0, 255, 0, 0.15) 1.5px, transparent 1.5px);
+  background-size: 180px 180px, 260px 260px;
+  background-position: 20px 40px, 60px 0;
+  animation: dust-shift-b 180s linear infinite;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes dust-shift-a {
+  from {
+    background-position: 0 0, 50px 80px, 100px 20px;
+  }
+  to {
+    background-position: 1000px 600px, -800px 700px, 600px -900px;
+  }
+}
+
+@keyframes dust-shift-b {
+  from {
+    background-position: 20px 40px, 60px 0;
+  }
+  to {
+    background-position: -900px 700px, 800px -600px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #hero::before,
+  #hero::after {
+    animation: none;
+  }
+}
