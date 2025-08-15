@@ -38,7 +38,7 @@ function setupCarousel(root) {
 
   autoCycleInterval = setInterval(() => {
     show(index + 1);
-  }, 10000);
+  }, 5000);
 }
 
 // read more button
