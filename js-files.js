@@ -41,24 +41,6 @@ function setupCarousel(root) {
   }, 5000);
 }
 
-// read more button
-const readMoreBtns = document.querySelectorAll(".read-more-btn");
-
-readMoreBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const description = btn.previousElementSibling;
-    const moreText = description.querySelector(".more-text");
-
-    if (moreText.style.display === "none" || moreText.style.display === "") {
-      moreText.style.display = "inline";
-      btn.textContent = "Read Less";
-    } else {
-      moreText.style.display = "none";
-      btn.textContent = "Read More";
-    }
-  });
-});
-
 // translations
 
 // This object holds all the translations for English and Portuguese.
@@ -101,6 +83,7 @@ const translations = {
       "<br />This project uses pygame to create an alien shooter.<br /> This project was focused on OOP practices and modularity using python. <br />",
 
     readMore: "Read More",
+    readLess: "Read Less",
 
     // Contact Section
     "contact.title": "Contact",
@@ -150,7 +133,8 @@ const translations = {
     "projects.4.more":
       "<br />Este projeto usa Pygame para criar um jogo de tiro alienígena.<br /> Este projeto foi focado em práticas de POO e modularidade usando Python. <br />",
 
-    readMore: "Leia Mais",
+    readMore: "Ler Mais",
+    readLess: "Ler Menos",
 
     // Seção de Contato
     "contact.title": "Contato",
@@ -165,11 +149,16 @@ const translations = {
   },
 };
 
+// Variable to store the current language state.
+let currentLanguage = "en";
+
 /**
  * This function sets the language of the page, preserving nested HTML elements.
  * @param {string} lang - The language to set ('en' or 'pt').
  */
 const setLanguage = (lang) => {
+  currentLanguage = lang; // Update the current language state.
+
   // Find all elements that have a 'data-i18n' attribute.
   const elements = document.querySelectorAll("[data-i18n]");
 
@@ -183,22 +172,19 @@ const setLanguage = (lang) => {
 
       if (hasNestedI18n) {
         // If it's a container, only translate the text part.
-        // We find the first child node that is a text node and contains actual text.
         const childNodes = element.childNodes;
         for (let i = 0; i < childNodes.length; i++) {
           const node = childNodes[i];
-          // Node.TEXT_NODE === 3. We also check to make sure it's not just whitespace.
           if (node.nodeType === 3 && node.textContent.trim().length > 0) {
             node.textContent = translation;
-            break; // Stop after translating the first relevant text node.
+            break;
           }
         }
       } else {
-        // If it's a "leaf" element with no nested translations, we can safely set its content.
+        // If it's a "leaf" element, set its content.
         if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
           element.placeholder = translation;
         } else {
-          // Use innerHTML because some translations contain HTML tags (e.g., <span>, <a>).
           element.innerHTML = translation;
         }
       }
@@ -208,10 +194,10 @@ const setLanguage = (lang) => {
 
 // --- Event Listeners ---
 
-// Wait for the DOM to be fully loaded before adding event listeners.
 document.addEventListener("DOMContentLoaded", () => {
   const flagUS = document.querySelector(".flag-us");
   const flagBR = document.querySelector(".flag-br");
+  const readMoreBtns = document.querySelectorAll(".read-more-btn");
 
   if (flagUS) {
     flagUS.addEventListener("click", () => setLanguage("en"));
@@ -221,7 +207,25 @@ document.addEventListener("DOMContentLoaded", () => {
     flagBR.addEventListener("click", () => setLanguage("pt"));
   }
 
-  // Set a default language when the page loads.
-  // You can change 'en' to 'pt' if you want Portuguese to be the default.
-  setLanguage("en");
+  // "Read More" / "Read Less" button functionality
+  readMoreBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const description = btn.previousElementSibling;
+      const moreText = description.querySelector(".more-text");
+
+      // Check the state and toggle the text
+      if (moreText.style.display === "none" || moreText.style.display === "") {
+        moreText.style.display = "inline";
+        // Use the translation for "Read Less"
+        btn.textContent = translations[currentLanguage].readLess;
+      } else {
+        moreText.style.display = "none";
+        // Use the translation for "Read More"
+        btn.textContent = translations[currentLanguage].readMore;
+      }
+    });
+  });
+
+  // Set the default language when the page loads.
+  setLanguage("pt");
 });
