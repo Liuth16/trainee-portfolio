@@ -22,9 +22,9 @@
     <header>
       <nav>
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about" data-i18n="nav.about">About</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
         <div class="flags">
           <button class="flag-us">
@@ -40,8 +40,12 @@
     <main>
       <section id="hero">
         <div class="hero-content">
-          <h1>Hi I'm <span class="name">Leandro</span></h1>
-          <p>Full-stack developer building awesome things for the web.</p>
+          <h1 data-i18n="hero.title">
+            Hi I'm <span class="name">Leandro</span>
+          </h1>
+          <p data-i18n="hero.subtitle">
+            Full-stack developer building awesome things for the web.
+          </p>
         </div>
       </section>
       <section id="about">
@@ -52,7 +56,7 @@
             class="profile-pic"
           />
           <h2>Leandro</h2>
-          <p class="bio">
+          <p class="bio" data-i18n="about.bio">
             A passionate software developer interested in building web
             applications with JavaScript, React, Node.js, and more. I'm a quick
             learner and collaborate closely with clients to create efficient,
@@ -61,7 +65,7 @@
           </p>
         </div>
         <div class="tech-carousel-container">
-          <h3>Technologies I use</h3>
+          <h3 data-i18n="about.techTitle">Technologies I use</h3>
           <div class="tech-carousel">
             <div class="tech-icons">
               <i class="lni lni-html5" title="HTML5"></i>
@@ -88,7 +92,7 @@
       <section id="projects">
         <article class="project">
           <div class="project-title">
-            <h3>Weather Website</h3>
+            <h3 data-i18n="projects.1.title">Weather Website</h3>
             <a href="https://github.com/Liuth16/weather-app" target="_blank">
               <i class="lni lni-github"></i>
             </a>
@@ -119,9 +123,9 @@
             </div>
           </div>
           <div class="project-description">
-            <p>
+            <p data-i18n="projects.1.desc">
               A simple weather website.
-              <span class="more-text">
+              <span class="more-text" data-i18n="projects.1.more">
                 <br />
                 This project explores integration with Visual Crossing API to
                 provide weather data to any location up to 15 coming days.<br />This
@@ -129,12 +133,14 @@
                 extracting and display.</span
               >
             </p>
-            <button class="read-more-btn">Read More</button>
+            <button class="read-more-btn" data-i18n="readMore">
+              Read More
+            </button>
           </div>
         </article>
         <article class="project">
           <div class="project-title">
-            <h3>Online Store</h3>
+            <h3 data-i18n="projects.2.title">Online Store</h3>
             <a href="https://github.com/Liuth16/shopping-cart" target="_blank">
               <i class="lni lni-github"></i>
             </a>
@@ -174,9 +180,9 @@
             </div>
           </div>
           <div class="project-description">
-            <p>
+            <p data-i18n="projects.2.desc">
               Front-end online store with API integration.
-              <span class="more-text">
+              <span class="more-text" data-i18n="projects.2.more">
                 <br />This project uses reactJS to build the front-end of an
                 online shop. The app is integrated with a mock API to fetch the
                 products.<br />This project apply knowledge on react routes,
@@ -184,12 +190,14 @@
                 providers.</span
               >
             </p>
-            <button class="read-more-btn">Read More</button>
+            <button class="read-more-btn" data-i18n="readMore">
+              Read More
+            </button>
           </div>
         </article>
         <article class="project">
           <div class="project-title">
-            <h3>Battleship webgame</h3>
+            <h3 data-i18n="projects.3.title">Battleship webgame</h3>
             <a href="https://github.com/Liuth16/battleship" target="_blank">
               <i class="lni lni-github"></i>
             </a>
@@ -226,20 +234,22 @@
             </div>
           </div>
           <div class="project-description">
-            <p>
+            <p data-i18n="projects.3.desc">
               A battleship game made with vanilla JS.
-              <span class="more-text">
+              <span class="more-text" data-i18n="projects.3.more">
                 <br />This project uses vanilla Javascript to create a
                 battleship game.<br />You can play against computer or other
                 player with shared screen. <br
               /></span>
             </p>
-            <button class="read-more-btn">Read More</button>
+            <button class="read-more-btn" data-i18n="readMore">
+              Read More
+            </button>
           </div>
         </article>
         <article class="project">
           <div class="project-title">
-            <h3>Alien shooter pygame</h3>
+            <h3 data-i18n="projects.4.title">Alien shooter pygame</h3>
             <a href="https://github.com/Liuth16/alien-shooter" target="_blank">
               <i class="lni lni-github"></i>
             </a>
@@ -267,20 +277,22 @@
             </div>
           </div>
           <div class="project-description">
-            <p>
+            <p data-i18n="projects.4.desc">
               An alien shooter made with pygame.
-              <span class="more-text">
+              <span class="more-text" data-i18n="projects.4.more">
                 <br />This project uses pygame to create an alien shooter.<br />
                 This project was focused on OOP practices and modularity using
                 python. <br
               /></span>
             </p>
-            <button class="read-more-btn">Read More</button>
+            <button class="read-more-btn" data-i18n="readMore">
+              Read More
+            </button>
           </div>
         </article>
       </section>
       <section id="contact">
-        <h2>Contact</h2>
+        <h2 data-i18n="contact.title">Contact</h2>
         <div class="contact-grid">
           <div class="contact-card">
             <form action="#" id="contact-form" class="contact-form" novalidate>
@@ -290,6 +302,7 @@
                   id="name"
                   name="name"
                   placeholder="Your name"
+                  data-i18n="contact.namePlaceholder"
                   required
                 />
                 <input
@@ -297,6 +310,7 @@
                   id="email"
                   name="email"
                   placeholder="Your email"
+                  data-i18n="contact.emailPlaceholder"
                   required
                 />
                 <textarea
@@ -304,10 +318,13 @@
                   id="message"
                   rows="6"
                   placeholder="Your message"
+                  data-i18n="contact.messagePlaceholder"
                 ></textarea>
               </div>
-              <button type="submit" class="submit-btn">Send Message</button>
-              <p class="form-note">
+              <button type="submit" class="submit-btn" data-i18n="contact.send">
+                Send Message
+              </button>
+              <p class="form-note" data-i18n="contact.note">
                 Prefer email?
                 <a href="mailto:leandro.ps160@gmail.com" class="mail-link"
                   >leandro.ps160@gmail.com</a
@@ -322,7 +339,7 @@
               class="social-link"
             >
               <i class="lni lni-linkedin"></i>
-              <span>Connect on LinkedIn</span></a
+              <span data-i18n="contact.linkedin">Connect on LinkedIn</span></a
             >
             <a
               href="https://github.com/Liuth16"
@@ -330,7 +347,7 @@
               class="social-link"
             >
               <i class="lni lni-github"></i>
-              <span>Connect on Github</span></a
+              <span data-i18n="contact.github">Connect on Github</span></a
             >
           </div>
         </div>
