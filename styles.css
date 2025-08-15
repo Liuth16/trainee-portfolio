@@ -83,6 +83,7 @@ h2 {
 header {
   background-color: #000;
   position: sticky;
+  overflow: hidden;
   padding: 1rem;
   top: 0;
   z-index: 1000;
@@ -503,7 +504,6 @@ footer {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 2rem;
-    min-width: 280px;
     overflow: hidden;
   }
   .project .carousel {
@@ -544,11 +544,6 @@ footer {
 }
 
 @media (max-width: 480px) {
-  html,
-  body {
-    overflow-x: hidden;
-  }
-
   .hero-content h1 {
     font-size: 2.5rem;
   }
@@ -575,6 +570,7 @@ footer {
   }
   .contact-card {
     padding: 1.5rem;
+    overflow: hidden;
   }
 }
 
