@@ -187,6 +187,7 @@ nav a:hover {
 }
 
 .bio {
+  font-family: "Exo 2", sans-serif;
   max-width: 700px;
   margin: 0 auto;
   font-size: 1.2rem;
@@ -290,6 +291,10 @@ nav a:hover {
 
 .project-description {
   flex-direction: column;
+}
+
+.project-description .more-text {
+  font-family: "Exo 2", sans-serif;
 }
 
 .more-text {
