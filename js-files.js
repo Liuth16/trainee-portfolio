@@ -77,9 +77,6 @@ const translations = {
     "projects.4.more":
       "<br />This project uses pygame to create an alien shooter.<br /> This project was focused on OOP practices and modularity using python. <br />",
 
-    readMore: "Read More",
-    readLess: "Read Less",
-
     // Contact Section
     "contact.title": "Contact",
     "contact.namePlaceholder": "Your name",
@@ -128,9 +125,6 @@ const translations = {
     "projects.4.more":
       "<br />Este projeto usa Pygame para criar um jogo de tiro alienígena.<br /> Este projeto foi focado em práticas de POO e modularidade usando Python. <br />",
 
-    readMore: "Ler Mais",
-    readLess: "Ler Menos",
-
     // Seção de Contato
     "contact.title": "Contato",
     "contact.namePlaceholder": "Seu nome",
@@ -147,8 +141,28 @@ const translations = {
 // Variable to store the current language state.
 let currentLanguage = "en";
 
+// Conditionally translate read button
+function readMoreButtonTranslate(btn) {
+  const description = btn.previousElementSibling;
+  const moreText = description.querySelector(".more-text");
+  if (
+    currentLanguage === "en" &&
+    (moreText.style.display === "none" || moreText.style.display === "")
+  ) {
+    btn.textContent = "Read more";
+  } else if (currentLanguage === "en" && moreText.style.display === "inline") {
+    btn.textContent = "Read less";
+  } else if (currentLanguage === "pt" && moreText.style.display === "inline") {
+    btn.textContent = "Ler menos";
+  } else {
+    btn.textContent = "Ler mais";
+  }
+}
+
 const setLanguage = (lang) => {
   currentLanguage = lang; // Update the current language state.
+  const readMoreBtns = document.querySelectorAll(".read-more-btn");
+  readMoreBtns.forEach(readMoreButtonTranslate);
 
   // Find all elements that have a 'data-i18n' attribute.
   const elements = document.querySelectorAll("[data-i18n]");
@@ -209,10 +223,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (moreText.style.display === "none" || moreText.style.display === "") {
         moreText.style.display = "inline";
-        btn.textContent = translations[currentLanguage].readLess;
+        readMoreButtonTranslate(btn);
       } else {
         moreText.style.display = "none";
-        btn.textContent = translations[currentLanguage].readMore;
+        readMoreButtonTranslate(btn);
       }
     });
   });
