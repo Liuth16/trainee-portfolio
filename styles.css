@@ -429,6 +429,12 @@ nav a:hover {
   color: #ffffff;
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s, transform 0.1s;
+  font-family: "Exo 2", sans-serif;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: "Orbitron", sans-serif;
 }
 
 .contact-form input:focus,
