@@ -101,6 +101,7 @@ nav ul {
   display: flex;
   justify-content: center;
   gap: 2rem;
+  padding-left: 0;
 }
 
 nav a {
