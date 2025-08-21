@@ -4,6 +4,7 @@ function setupCarousel(root) {
   const nextBtn = root.querySelector(".carousel-control.next");
   let autoCycleInterval;
 
+  // check if theres an active items, if not make one
   let index = Array.from(items).findIndex((i) =>
     i.classList.contains("active")
   );
@@ -12,8 +13,10 @@ function setupCarousel(root) {
     items[0].classList.add("active");
   }
 
+  // make the slides receive and remove the active class to be displayed
   const show = (i) => {
     if (!items.length) return;
+    // make index wrap cyclically
     const newIndex = (i + items.length) % items.length;
     if (newIndex === index) return;
     items[index]?.classList.remove("active");
@@ -38,7 +41,6 @@ function setupCarousel(root) {
 
 // translations
 
-// This object holds all the translations for English and Portuguese.
 const translations = {
   en: {
     // Navigation
@@ -47,13 +49,13 @@ const translations = {
     "nav.contact": "Contact",
 
     // Hero Section
-    "hero.title": 'Hi I\'m <span class="name">Leandro</span>',
+    "hero.title": 'Hi, I\'m <span class="name">Leandro</span>',
     "hero.subtitle":
       "Full-stack developer building awesome things for the web.",
 
     // About Section
     "about.bio":
-      "A passionate software developer interested in building web applications with JavaScript, React, Node.js, and more. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems.",
+      "A passionate software developer focused on building web applications with JavaScript, React, Node.js, and more. I'm a quick learner who collaborates closely with clients to deliver efficient, scalable, and user-friendly solutions. In addition to my web development interest, I hold a degree in Data Science, have hands-on experience working with networks and CCNA certification.",
     "about.techTitle": "Technologies I use",
 
     // Projects Section
@@ -101,7 +103,7 @@ const translations = {
 
     // Seção Sobre
     "about.bio":
-      "Um desenvolvedor de software apaixonado e interessado em construir aplicações web com JavaScript, React, Node.js e mais. Eu aprendo rápido e colaboro de perto com clientes para criar soluções eficientes, escaláveis e amigáveis ao usuário que resolvem problemas do mundo real.",
+      "Um desenvolvedor de software apaixonado por criar aplicações web com JavaScript, React, Node.js e outras tecnologias. Sou um aprendiz rápido e colaboro de perto com clientes para entregar soluções eficientes, escaláveis e fáceis de usar. Além do meu interesse em desenvolvimento web, possuo graduação em Ciência de Dados, experiência prática em redes e certificação CCNA.",
     "about.techTitle": "Tecnologias que eu uso",
 
     // Seção de Projetos
@@ -138,7 +140,6 @@ const translations = {
   },
 };
 
-// Variable to store the current language state.
 let currentLanguage = "en";
 
 // Conditionally translate read button
@@ -172,11 +173,10 @@ const setLanguage = (lang) => {
     const translation = translations[lang]?.[key];
 
     if (translation) {
-      // Check if the current element contains any nested elements that also need translation.
       const hasNestedI18n = element.querySelector("[data-i18n]");
 
       if (hasNestedI18n) {
-        // If it's a container, only translate the text part.
+        // check if the element has nested elements with i18n tags, if yes replace only text with translation (using nodeType 3)
         const childNodes = element.childNodes;
         for (let i = 0; i < childNodes.length; i++) {
           const node = childNodes[i];

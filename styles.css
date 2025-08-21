@@ -268,7 +268,7 @@ nav a:hover {
 
 .project {
   background-color: #1a1a1a;
-  padding: 2rem;
+  padding: 1rem 2rem;
   border-radius: 8px;
   margin-bottom: 1rem;
   display: grid;
@@ -299,7 +299,6 @@ nav a:hover {
 
 .project-description {
   flex-direction: column;
-  padding: 0.5rem;
 }
 
 .project-description .more-text {
@@ -547,10 +546,6 @@ footer {
   }
   section {
     padding: 3rem 1rem;
-  }
-
-  .project-title i {
-    font-size: 1.5rem;
   }
 }
 
